@@ -7,9 +7,10 @@
 
 {% block body %}
     <div class="container">
-        <br><br>
+        <br>
+        {% include 'flash_messages.html.twig' %}
+        <br>
         <h2>Authentification</h2>
-        <hr>
         <hr>
         <div id="formContent">
 
@@ -47,4 +48,5 @@
             </div>
         </div>
     </div>
+
 {% endblock %}

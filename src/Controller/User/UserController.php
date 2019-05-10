@@ -3,9 +3,10 @@
 namespace App\Controller\User;
 
 use App\Entity\User;
-use App\Form\Connexion\LoginForm;
 use App\Form\SignUp\UserForm;
 use Doctrine\Common\Persistence\ObjectManager;
+use http\Message;
+use Swift_Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,10 +20,11 @@ class UserController extends AbstractController
      * @param Request $request
      * @param ObjectManager $objectManager
      * @param UserPasswordEncoderInterface $encoder
+     * @param Swift_Mailer $maile
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      */
-    public function Authentication(Request $request, ObjectManager $objectManager, UserPasswordEncoderInterface $encoder)
+    public function Authentication(Request $request, ObjectManager $objectManager, UserPasswordEncoderInterface $encoder,Swift_Mailer $maile)
     {
         $user = new User();
         $form = $this->createForm(UserForm::class, $user);
@@ -36,7 +38,16 @@ class UserController extends AbstractController
 
             $objectManager->persist($user);
             $objectManager->flush();
-            return $this->redirectToRoute("Connexion");
+
+            $message = (new \Swift_Message('Instructions de confirmation '))
+                ->setFrom('alayanbashar@gmail.com')
+                ->setTo($user->getEmail())
+                ->setBody("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
+            $maile->send($message);
+            $this->addFlash('success',"Un message a été envoyé a votre boite mail");
+
+            return $this->redirectToRoute("authentification");
         }
         return $this->render('Public/Authentication.html.twig', array('form' => $form->createView()));
     }
