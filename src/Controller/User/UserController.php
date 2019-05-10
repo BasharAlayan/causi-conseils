@@ -40,9 +40,16 @@ class UserController extends AbstractController
             $objectManager->flush();
 
             $message = (new \Swift_Message('Instructions de confirmation '))
-                ->setFrom('alayanbashar@gmail.com')
+                ->setFrom('causi.conseils@gmail.com')
                 ->setTo($user->getEmail())
-                ->setBody("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                ->setBody(
+                    $this->renderView(
+
+                        'Email/confirmation.html.twig',
+                        ['firstname' => $user->getFirstName(),'lastname' => $user->getLastName(),'email' => $user->getEmail()]
+                    ),
+                    'text/html'
+                );
 
             $maile->send($message);
             $this->addFlash('success',"Un message a été envoyé a votre boite mail");
