@@ -1,0 +1,45 @@
+{% extends 'basePrivate.html.twig' %}
+
+
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon Profil{% endblock %}</title>
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+              integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+              crossorigin="anonymous">
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block body %}
+    <h2>Bienvenue {{ profils.firstname }}
+    </h2>
+    <br><br>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>Votre Prenom</td>
+            <td><h4>{{ profils.firstname }}</h4></td>
+        </tr>
+        <tr>
+            <td> Votre Nom</td>
+            <td><h4>{{ profils.lastname }}</h4></td>
+        </tr>
+        <tr>
+            <td> Vos metiers</td>
+            <td><h4>{{ profils.metiers }}</h4></td>
+        </tr>
+
+        <tr>
+            <td>A quoi je vaux participer</td>
+            <td><h4>{{ profils.List }}</h4></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

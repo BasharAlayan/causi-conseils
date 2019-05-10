@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Authentification{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <br><br>
+        <h2>Authentification</h2>
+        <hr>
+        <hr>
+        <div id="formContent">
+
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_row(form.firstname) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.lastname) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.email) }}
+            </div>
+            <div class=" form-group">
+                {{ form_row(form.password) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.confirm_password) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.availability) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_row(form.List) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.metiers) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.submit) }}
+            </div>
+            <div class="form-group">
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
