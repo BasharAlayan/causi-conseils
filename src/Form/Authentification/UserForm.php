@@ -6,7 +6,7 @@
  * Time: 15:24
  */
 
-namespace App\Form\SignUp;
+namespace App\Form\Authentification;
 
 
 use App\Entity\User;

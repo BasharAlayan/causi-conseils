@@ -11,7 +11,7 @@ namespace App\Controller\User;
 
 use App\Entity\Tags;
 use App\Entity\User;
-use App\Form\SignUp\UserForm;
+use App\Form\Authentification\UserForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 

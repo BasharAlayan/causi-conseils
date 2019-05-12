@@ -3,7 +3,7 @@
 namespace App\Controller\User;
 
 use App\Entity\User;
-use App\Form\SignUp\UserForm;
+use App\Form\Authentification\UserForm;
 use Doctrine\Common\Persistence\ObjectManager;
 use http\Message;
 use Swift_Mailer;

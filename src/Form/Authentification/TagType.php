@@ -6,7 +6,7 @@
  * Time: 15:29
  */
 
-namespace App\Form\SignUp;
+namespace App\Form\Authentification;
 
 
 use App\Controller\User\TagsTransformer;
