@@ -69,7 +69,7 @@ class PasswordController extends AbstractController
             $objectManager->persist($user);
             $objectManager->flush();
 
-            $this->addFlash('success', "Le mot de passe a été modifier");
+            //$this->addFlash('success', "Le mot de passe a été modifier");
 
             return $this->redirectToRoute("Connexion");
         }

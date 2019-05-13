@@ -75,6 +75,15 @@ class User implements UserInterface
      */
     private $created;
 
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Veuillez télécharger votre CV sous forme de fichier PDF.")
+     * @Assert\File(mimeTypes={ "application/pdf" })
+     *
+     */
+    private $file;
+
+
     public function __construct()
     {
         $this->TagsCenterInterest=new \Doctrine\Common\Collections\ArrayCollection();
@@ -169,6 +178,18 @@ class User implements UserInterface
     public function setEmail(string $email)
     {
         $this->email = $email;
+    }
+
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
     }
 
     public function getCreatedAt(): ?\DateTime

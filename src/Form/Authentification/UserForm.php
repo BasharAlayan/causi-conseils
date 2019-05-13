@@ -13,6 +13,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -62,6 +63,11 @@ class UserForm extends AbstractType
             ->add('metiers', TextType::class, [
                 'label' => ' Vos metiers',
                 'attr' => ['placeholder' => 'Entrez vos metiers', 'class' => 'form-control',]])
+
+            ->add('file', FileType::class, [
+                'label' => ' Votre CV',
+                'attr' => ['placeholder' => 'Entrez votre CV', 'class' => 'form-control',]])
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Enregistrer',
                 'attr' => ['class' => "btn btn-primary",]]);

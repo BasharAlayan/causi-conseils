@@ -22,21 +22,25 @@
     <table class="table">
         <tbody>
         <tr>
-            <td>Votre Prenom</td>
+            <td><h4>Votre Prenom</h4></td>
             <td><h4>{{ profils.firstname }}</h4></td>
         </tr>
         <tr>
-            <td> Votre Nom</td>
+            <td><h4> Votre Nom</h4></td>
             <td><h4>{{ profils.lastname }}</h4></td>
         </tr>
         <tr>
-            <td> Vos metiers</td>
+            <td><h4> Vos metiers</h4></td>
             <td><h4>{{ profils.metiers }}</h4></td>
         </tr>
 
         <tr>
-            <td>A quoi je vaux participer</td>
+            <td><h4>A quoi je vaux participer</h4></td>
             <td><h4>{{ profils.List }}</h4></td>
+        </tr>
+        <tr>
+            <td><h4>CV</h4></td>
+            <td><h4><a href="{{ asset('uploads/files/' ~ profils.file) }}">Votre CV (PDF)</a></h4></td>
         </tr>
         </tbody>
     </table>
