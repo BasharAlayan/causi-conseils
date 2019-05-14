@@ -77,7 +77,6 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message="Veuillez télécharger votre CV sous forme de fichier PDF.")
      * @Assert\File(mimeTypes={ "application/pdf" })
      *
      */

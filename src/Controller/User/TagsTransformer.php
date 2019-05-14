@@ -24,14 +24,26 @@ class TagsTransformer implements DataTransformerInterface
         $this->manager = $objectManager;
     }
 
-    public function transform($tags)
+    public function transform($value)
     {
-        return implode(',', $tags);
+        return implode(',', $value);
         //return implode(',',$value);
     }
 
-    public function reverseTransform($tags)
+    public function reverseTransform($value)
     {
+
+        $names = array_filter(array_unique(array_map('trim', explode(',', $value))));
+        $oldTags = $this->manager->getRepository('BlogBundle:Tags')->findBy([
+            'name' => $names
+        ]);
+        $tags = [];
+        foreach ($names as $name) {
+            $tag = new Tags();
+            $tag->setCenterInterest($name);
+            $tags[] = $tag;
+        }
+        return $tags;
         /*
         $names=array_filter(array_unique(array_map('trim',explode(',',$value))));
         $plodTags=$this->
@@ -62,6 +74,8 @@ class TagsTransformer implements DataTransformerInterface
 
         return $tagCollection;
         */
+
+
         $names = array_unique(array_filter(array_map('trim', explode(',', $string))));
         $tags = $this->manager->getRepository('TagBundle:Tag')->findBy([
             'name' => $names

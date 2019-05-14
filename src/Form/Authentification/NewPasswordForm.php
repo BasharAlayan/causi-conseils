@@ -26,6 +26,12 @@ class NewPasswordForm extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => 'Nouveau mot de passe',
                 'attr' => ['placeholder' => 'Entrez votre nouveau mot de passe', 'class' => 'form-control',]])
+
+            ->add('confirm_password', PasswordType::class, [
+                'label' => 'Confirmez le Nouveau mot de passe',
+                'attr' => ['placeholder' => 'Confirmez votre nouveau mot de passe', 'class' => 'form-control',]])
+
+
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider',
                 'attr' => ['class' => "btn btn-primary",]]);
