@@ -12,7 +12,7 @@ namespace App\Form\Authentification;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
@@ -36,20 +36,44 @@ class UserForm extends AbstractType
             ->add('password', PasswordType::class, [
                 'label' => 'Mot de passe',
                 'attr' => ['placeholder' => 'Entrez votre mot de passe', 'class' => 'form-control',]])
+
             ->add('confirm_password', PasswordType::class, [
                 'label' => 'Confirmation du mot de passe',
-                'attr' => ['placeholder' => 'confirmaez votre mot de passe', 'class' => 'form-control',]])
+                'attr' => ['placeholder' => 'confirmez votre mot de passe', 'class' => 'form-control',]])
+
             ->add('email', EmailType::class, [
                 'label' => 'Votre Email',
                 'attr' => ['placeholder' => 'Entrez votre Email', 'class' => 'form-control',]])
+
             ->add('availability', BirthdayType::class, [
                 'label' => 'Votre disponibilité',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'attr' => ['class' => 'form-control',]])
-            ->add('TagsCenterInterest', CollectionType::class, array(
-                'entry_type' => TagType::class,
-                'attr' => ['class' => 'form-control',]))
+
+            ->add('birth_date', BirthdayType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'attr' => ['class' => 'form-control',]])
+            ->add('nationality', CountryType::class , [
+                'label' => 'Votre nationalité',
+                'attr' => ['class' => 'form-control',]])
+
+            ->add('country', CountryType::class, [
+                'label' => 'Votre pays',
+                'attr' => ['class' => 'form-control',]])
+
+            ->add("TagsCenterInterest", TagType::class,[
+                'label' => 'centre d\'intérêts',
+                'attr' => [ 'class' => 'tag-input',
+            ]])
+
+        //    ->add("competencies", TagType::class,[
+         //       'label' => 'compétences',
+         //       'attr' => [ 'class' => 'tag-input',
+        //       ]])
+
             ->add('List', ChoiceType::class, array('choices' => array(
                     'List1' => "List1",
                     'List2' => "List2",
@@ -60,9 +84,9 @@ class UserForm extends AbstractType
                     'expanded' => false,
                     'label' => 'A quoi vous voulez participer',)
             )
-            ->add('metiers', TextType::class, [
-                'label' => ' Vos metiers',
-                'attr' => ['placeholder' => 'Entrez vos metiers', 'class' => 'form-control',]])
+          //  ->add('TagProfession', TagType::class, [
+           //     'label' => ' Vos metiers',
+            //    'attr' => ['class' => 'tag-input',]])
 
             ->add('file', FileType::class, [
                 'label' => ' Votre CV',

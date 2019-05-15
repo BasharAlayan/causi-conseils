@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  */
-class Tags
+class CenterInterests
 {
     /**
      * @ORM\Column(type="integer")
@@ -32,10 +32,6 @@ class Tags
      */
     protected $users;
 
-    public function __construct()
-    {
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -52,20 +48,19 @@ class Tags
         $this->CenterInterest = $CenterInterest;
     }
 
-    public function getUsers() : ?string
+    public function __toString()
     {
-        return $this->users;
-    }
+        return$this->CenterInterest;    }
 
-    public function addProduct(\App\Entity\User $user)
-    {
-        $this->users[] = $user;
+        public function getUsers() : ?string
+        {
+            return $this->users;
+        }
 
-        return $this;
-    }
+     public function addProduct(User $user)
+     {
+         $this->users[] = $user;
 
-    public function removeProduct(\App\Entity\User $user)
-    {
-        $this->users->removeElement($user);
-    }
+         return $this;
+     }
 }

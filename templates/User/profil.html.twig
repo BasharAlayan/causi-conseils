@@ -31,12 +31,25 @@
         </tr>
         <tr>
             <td><h4> Vos metiers</h4></td>
-            <td><h4>{{ profils.metiers }}</h4></td>
+            <td><h4>{{ profils.TagProfession | join(', ') }}</h4></td>
+
         </tr>
 
         <tr>
             <td><h4>A quoi je vaux participer</h4></td>
             <td><h4>{{ profils.List }}</h4></td>
+        </tr>
+        <tr>
+            <td><h4>Vos centre d/'intérêts</h4></td>
+            <td><h4>{{ profils.TagsCenterInterest | join(', ') }}</h4></td>
+        </tr>
+        <tr>
+            <td><h4>Vos centre d/'intérêts</h4></td>
+            <td><h4>{{ profils.TagProfession | join(', ') }}</h4></td>
+        </tr>
+        <tr>
+            <td><h4>Vos competence</h4></td>
+            <td><h4>{{ profils.competencies | join(', ') }}</h4></td>
         </tr>
         <tr>
             <td><h4>CV</h4></td>

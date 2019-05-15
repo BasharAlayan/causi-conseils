@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -48,22 +49,44 @@ class User implements UserInterface
      */
     private $availability;
 
-
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime" , length=255)
      */
-    private $metiers;
+    private $birth_date;
+
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $List;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nationality;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tags", inversedBy="users", cascade={"persist"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $country;
+
+
+/*
+    /**
+     * @ORM\ManyToMany(targetEntity="Professions",inversedBy="users", cascade={"persist"})
+     */
+ //   private $TagProfession;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="CenterInterests",inversedBy="users", cascade={"persist"})
      */
     private $TagsCenterInterest;
+
+/*
+    /**
+     * @ORM\ManyToMany(targetEntity="Competencies",inversedBy="users", cascade={"persist"})
+     */
+  //  private $competencies;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -85,7 +108,7 @@ class User implements UserInterface
 
     public function __construct()
     {
-        $this->TagsCenterInterest=new \Doctrine\Common\Collections\ArrayCollection();
+        $this->TagsCenterInterest = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -140,26 +163,36 @@ class User implements UserInterface
 
         return $this;
     }
-
-    public function getMetiers(): ?string
+//----------------------------------------------------------------------------------------------
+  /*  public function addTagCompetencies(Competencies $tag)
     {
-        return $this->metiers;
-    }
-
-    public function setMetiers(string  $metiers): self
-    {
-        $this->metiers = $metiers;
-
+        $this->competencies[] = $tag;
         return $this;
     }
 
-    public function addTagCenterInterest(\App\Entity\Tags $tag)
+    public function removeTagCompetencies(Competencies $tag)
     {
-        $this->TagsCenterInterest[]=$tag;
+        $this->competencies->removeElement($tag);
+    }
+
+    public function getCompetencies()
+    {
+        return $this->competencies;
+    }
+
+    public function setCompetencies($competencies)
+    {
+        $this->competencies = $competencies;
+    }
+  */
+//----------------------------------------------------------------------------------------------
+    public function addTag(CenterInterests $tag)
+    {
+        $this->TagsCenterInterest[] = $tag;
         return $this;
     }
 
-    public function removeTag(\App\Entity\Tags $tag)
+    public function removeTag(CenterInterests $tag)
     {
         $this->TagsCenterInterest->removeElement($tag);
     }
@@ -169,6 +202,33 @@ class User implements UserInterface
         return $this->TagsCenterInterest;
     }
 
+    public function setTagsCenterInterest($TagsCenterInterest)
+    {
+        $this->TagsCenterInterest = $TagsCenterInterest;
+    }
+
+//----------------------------------------------------------------------------------------------
+  /*  public function addTagProfessions(Professions $tag)
+    {
+        $this->TagProfession[] = $tag;
+        return $this;
+    }
+
+    public function removeTagProfessions(Professions $tag)
+    {
+        $this->TagProfession->removeElement($tag);
+    }
+
+    public function getTagProfession()
+    {
+        return $this->TagProfession;
+    }
+
+    public function setTagProfession($TagProfession)
+    {
+        $this->TagProfession = $TagProfession;
+    }*/
+//----------------------------------------------------------------------------------------------
     public function getEmail(): ?string
     {
         return $this->email;
@@ -189,6 +249,36 @@ class User implements UserInterface
         $this->file = $file;
 
         return $this;
+    }
+
+    public function getBirthDate() : ?\DateTime
+    {
+        return $this->birth_date;
+    }
+
+    public function setBirthDate(\DateTimeInterface $birth_date)
+    {
+        $this->birth_date = $birth_date;
+    }
+
+    public function getNationality() : ?string
+    {
+        return $this->nationality;
+    }
+
+    public function setNationality(string $nationality)
+    {
+        $this->nationality = $nationality;
+    }
+
+    public function getCountry() : ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(string $country)
+    {
+        $this->country = $country;
     }
 
     public function getCreatedAt(): ?\DateTime
@@ -229,7 +319,7 @@ class User implements UserInterface
      * and populated in any number of different ways when the user object
      * is created.
      *
-     * @return (Role|string)[] The user roles
+     * @return array (Role|string)[] The user roles
      */
     public function getRoles()
     {
@@ -241,7 +331,6 @@ class User implements UserInterface
      *
      * This can return null if the password was not encoded using a salt.
      *
-     * @return string|null The salt
      */
     public function getSalt()
     {
@@ -268,4 +357,6 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
+
+
 }

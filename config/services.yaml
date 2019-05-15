@@ -24,5 +24,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    tag.form.type:
+        class: App\Form\Authentification\TagType
+        arguments: ['@doctrine.orm.entity_manager']
+        tags: [ name: form.type ]
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
