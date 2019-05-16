@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1e87ad0-3029-4f0a-933a-ef59a6884168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Competencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Competencies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Professions.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Professions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/User/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Authentification/TagType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Authentification/UserForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Authentification/UserForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DataTransformer/TagsTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DataTransformer/CenterInterestsTranformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Public/Authentication.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Public/Authentication.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/User/profil.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/User/profil.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/psr/cache/" />
@@ -85,12 +78,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/Authentification/NewPasswordForm.php">
+        <entry file="file://$PROJECT_DIR$/src/Entity/CenterInterests.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="459">
+              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/User/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
               <folding>
-                <element signature="e#128#148#0#PHP" expanded="true" />
+                <element signature="e#39#59#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2017">
-              <caret line="184" column="37" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
+            <state relative-caret-position="175">
+              <caret line="349" column="17" selection-start-line="349" selection-start-column="17" selection-end-line="349" selection-end-column="26" />
               <folding>
                 <element signature="e#30#78#0#PHP" expanded="true" />
               </folding>
@@ -109,47 +111,20 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/Authentification/LoginForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/Authentification/VerifyEmailForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-              <folding>
-                <element signature="e#128#168#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Form/DataTransformer/CenterInterestsTranformer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#127#158#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Form/DataTransformer/CompetenciesTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+              <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
               <folding>
                 <element signature="e#127#155#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -160,6 +135,15 @@
               <folding>
                 <element signature="e#127#154#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Professions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -227,7 +211,6 @@
         <option value="$PROJECT_DIR$/public/assets/js/Tagsinput/bootstrap-tagsinput.css" />
         <option value="$PROJECT_DIR$/src/Entity/CenterInterests.php" />
         <option value="$PROJECT_DIR$/public/assets/css/tags-input.css" />
-        <option value="$PROJECT_DIR$/src/Controller/User/UserController.php" />
         <option value="$PROJECT_DIR$/src/Form/DataTransformer/ProfessionsTransformer.php" />
         <option value="$PROJECT_DIR$/src/Form/TagsType/ProfessionsTags.php" />
         <option value="$PROJECT_DIR$/src/Form/Authentification/TagType.php" />
@@ -238,9 +221,10 @@
         <option value="$PROJECT_DIR$/src/Form/DataTransformer/CenterInterestsTranformer.php" />
         <option value="$PROJECT_DIR$/templates/Public/Authentication.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Professions.php" />
-        <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/Form/Authentification/UserForm.php" />
         <option value="$PROJECT_DIR$/src/Form/DataTransformer/CompetenciesTransformer.php" />
+        <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/Controller/User/UserController.php" />
       </list>
     </option>
   </component>
@@ -355,6 +339,17 @@
             <path>
               <item name="causi-conseils" type="b2602c69:ProjectViewProjectNode" />
               <item name="causi-conseils" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="causi-conseils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="causi-conseils" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="causi-conseils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="causi-conseils" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -362,6 +357,13 @@
               <item name="causi-conseils" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="causi-conseils" type="b2602c69:ProjectViewProjectNode" />
+              <item name="causi-conseils" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="causi-conseils" type="b2602c69:ProjectViewProjectNode" />
@@ -477,15 +479,15 @@
       <workItem from="1557957666896" duration="174000" />
       <workItem from="1557958013223" duration="348000" />
       <workItem from="1558004509455" duration="271000" />
-      <workItem from="1558004781701" duration="4620000" />
+      <workItem from="1558004781701" duration="4992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125007000" />
+    <option name="totallyTimeSpent" value="125379000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19261745" />
@@ -513,7 +515,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/tsconfig.json" />
     <entry file="file://$PROJECT_DIR$/templates/movies.json" />
     <entry file="file://$PROJECT_DIR$/templates/Public/Tag.js" />
     <entry file="file://$PROJECT_DIR$/templates/Public/testTag.html.twig" />
@@ -648,16 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/User/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-          <folding>
-            <element signature="e#39#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/PublicController.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -685,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/CenterInterests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/TagsType/CenterInterestsTags.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -713,23 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
           <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Professions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2017">
-          <caret line="184" column="37" selection-start-line="184" selection-start-column="37" selection-end-line="184" selection-end-column="37" />
-          <folding>
-            <element signature="e#30#78#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,9 +776,46 @@
     <entry file="file://$PROJECT_DIR$/src/Form/DataTransformer/CompetenciesTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
           <folding>
             <element signature="e#127#155#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Professions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CenterInterests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="349" column="17" selection-start-line="349" selection-start-column="17" selection-end-line="349" selection-end-column="26" />
+          <folding>
+            <element signature="e#30#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/User/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <element signature="e#39#59#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

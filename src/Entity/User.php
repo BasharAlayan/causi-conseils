@@ -93,6 +93,11 @@ class User implements UserInterface
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $role;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $created;
@@ -284,6 +289,22 @@ class User implements UserInterface
         $this->country = $country;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role): void
+    {
+        $this->role = $role;
+    }
+
     public function getCreatedAt(): ?\DateTime
     {
         return $this->created;
@@ -360,6 +381,4 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
     }
-
-
 }

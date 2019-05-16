@@ -34,11 +34,9 @@ class UserController extends AbstractController
             $user->setPassword($hash);
 
             $user->setCreatedAt(new \DateTime());
+            $user->setRole("ROLE_USER");
 
             $file = $user->getFile();
-         //   $fileName=md5(uniqid()).'.'.$file->guessExtension();
-          //  $file->move($this->getParameter('upload_directory'), $fileName);
-
 
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
