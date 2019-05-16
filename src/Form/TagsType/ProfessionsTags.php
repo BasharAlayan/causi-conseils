@@ -2,15 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: moham
- * Date: 09/05/2019
- * Time: 15:29
+ * Date: 16/05/2019
+ * Time: 13:26
  */
 
-namespace App\Form\Authentification;
+namespace App\Form\TagsType;
 
 
-use App\Entity\CenterInterests;
-use App\Form\DataTransformer\TagsTransformer;
+use App\Form\DataTransformer\ProfessionsTransformer;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bridge\Doctrine\Form\DataTransformer\CollectionToArrayTransformer;
 use Symfony\Component\Form\AbstractType;
@@ -18,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class TagType extends AbstractType
+class ProfessionsTags extends AbstractType
 {
 
     private $manager;
@@ -33,7 +32,7 @@ class TagType extends AbstractType
     {
         $builder
             ->addModelTransformer(new CollectionToArrayTransformer(), true)
-            ->addModelTransformer(new TagsTransformer($this->manager), true);
+            ->addModelTransformer(new ProfessionsTransformer($this->manager), true);
     }
 
     public function configureOptions(OptionsResolver $resolver)

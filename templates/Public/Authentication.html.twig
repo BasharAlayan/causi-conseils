@@ -16,13 +16,6 @@
 
             {{ form_start(form) }}
             <div class="form-group">
-                {{ form_row(form.TagsCenterInterest) }}
-            </div>
-            <div class="form-group">
-                {#  {{ form_row(form.competencies) }} #}
-            </div>
-
-            <div class="form-group">
                 {{ form_row(form.firstname) }}
             </div>
             <div class="form-group">
@@ -54,9 +47,14 @@
                 {{ form_row(form.List) }}
             </div>
             <div class="form-group">
-                {#   {{ form_row(form.TagProfession) }}#}
+                {{ form_row(form.TagProfession) }}
             </div>
-
+            <div class="form-group">
+                {{ form_row(form.TagCompetencie) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.TagsCenterInterest) }}
+            </div>
             <div class="form-group">
                 {{ form_row(form.file) }}
             </div>

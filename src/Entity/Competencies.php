@@ -28,7 +28,7 @@ class Competencies
     protected $competencies;
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="competencies")
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="TagCompetencie")
      */
     protected $users;
 

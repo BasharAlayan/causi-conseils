@@ -2,18 +2,18 @@
 /**
  * Created by PhpStorm.
  * User: moham
- * Date: 14/05/2019
- * Time: 11:16
+ * Date: 16/05/2019
+ * Time: 13:23
  */
 
 namespace App\Form\DataTransformer;
 
 
-use App\Entity\CenterInterests;
+use App\Entity\Professions;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\DataTransformerInterface;
 
-class TagsTransformer implements DataTransformerInterface
+class ProfessionsTransformer implements DataTransformerInterface
 {
 
     private $manager;
@@ -39,16 +39,16 @@ class TagsTransformer implements DataTransformerInterface
         //array_map pour ajouter le callback
         $names = array_unique(array_filter(array_map('trim', explode(',', $string))));
 
-        $tags = $this->manager->getRepository(CenterInterests::class)->findBy(
-            ['CenterInterest' => $names]);
+        $tags = $this->manager->getRepository(Professions::class)->findBy(
+            ['professions' => $names]);
 
         //for know just the new words
         $newNames = array_diff($names, $tags);
 
         //inert the new values
         foreach ($newNames as $name) {
-            $tag = new CenterInterests();
-            $tag->setCenterInterest($name);
+            $tag = new Professions();
+            $tag->setProfessions($name);
             $tags[] = $tag;
         }
         return $tags;

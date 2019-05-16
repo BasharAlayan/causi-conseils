@@ -70,22 +70,22 @@ class User implements UserInterface
      */
     private $country;
 
-    /*
+
     /**
      * @ORM\ManyToMany(targetEntity="Professions",inversedBy="users", cascade={"persist"})
      */
-     //private $TagProfession;
+    private $TagProfession;
 
     /**
      * @ORM\ManyToMany(targetEntity="CenterInterests",inversedBy="users", cascade={"persist"})
      */
     private $TagsCenterInterest;
 
-/*
+
     /**
      * @ORM\ManyToMany(targetEntity="Competencies",inversedBy="users", cascade={"persist"})
      */
-  //  private $competencies;
+    private $TagCompetencie;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -108,6 +108,8 @@ class User implements UserInterface
     public function __construct()
     {
         $this->TagsCenterInterest = new ArrayCollection();
+        $this->TagProfession = new ArrayCollection();
+        $this->TagCompetencie = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -162,28 +164,29 @@ class User implements UserInterface
 
         return $this;
     }
+
 //----------------------------------------------------------------------------------------------
-  /*  public function addTagCompetencies(Competencies $tag)
+    public function addTagCompetencies(Competencies $tag)
     {
-        $this->competencies[] = $tag;
+        $this->TagCompetencie[] = $tag;
         return $this;
     }
 
     public function removeTagCompetencies(Competencies $tag)
     {
-        $this->competencies->removeElement($tag);
+        $this->TagCompetencie->removeElement($tag);
     }
 
-    public function getCompetencies()
+    public function getTagCompetencie()
     {
-        return $this->competencies;
+        return $this->TagCompetencie;
     }
 
-    public function setCompetencies($competencies)
+    public function setTagCompetencie($TagCompetencie)
     {
-        $this->competencies = $competencies;
+        $this->TagCompetencie = $TagCompetencie;
     }
-  */
+
 //----------------------------------------------------------------------------------------------
     public function addTag(CenterInterests $tag)
     {
@@ -207,7 +210,7 @@ class User implements UserInterface
     }
 
 //----------------------------------------------------------------------------------------------
-   /* public function addTagProfessions(Professions $tag)
+    public function addTagProfessions(Professions $tag)
     {
         $this->TagProfession[] = $tag;
         return $this;
@@ -226,7 +229,8 @@ class User implements UserInterface
     public function setTagProfession($TagProfession)
     {
         $this->TagProfession = $TagProfession;
-    }*/
+    }
+
 //----------------------------------------------------------------------------------------------
     public function getEmail(): ?string
     {
@@ -250,7 +254,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getBirthDate() : ?\DateTime
+    public function getBirthDate(): ?\DateTime
     {
         return $this->birth_date;
     }
@@ -260,7 +264,7 @@ class User implements UserInterface
         $this->birth_date = $birth_date;
     }
 
-    public function getNationality() : ?string
+    public function getNationality(): ?string
     {
         return $this->nationality;
     }
@@ -270,7 +274,7 @@ class User implements UserInterface
         $this->nationality = $nationality;
     }
 
-    public function getCountry() : ?string
+    public function getCountry(): ?string
     {
         return $this->country;
     }

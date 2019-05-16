@@ -26,7 +26,7 @@ class Professions
      * @ORM\Column(type="string")
      */
     protected $professions;
-/*
+
     /**
      * @ORM\ManyToMany(targetEntity="User", mappedBy="TagProfession")
      */
@@ -50,9 +50,10 @@ class Professions
 
     public function __toString()
     {
-        return$this->professions;    }
+        return $this->professions;
+    }
 
-    public function getUsers() : ?string
+    public function getUsers(): ?string
     {
         return $this->users;
     }
