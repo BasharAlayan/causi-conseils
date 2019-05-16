@@ -84,9 +84,9 @@ class UserForm extends AbstractType
                     'expanded' => false,
                     'label' => 'A quoi vous voulez participer',)
             )
-          //  ->add('TagProfession', TagType::class, [
-           //     'label' => ' Vos metiers',
-            //    'attr' => ['class' => 'tag-input',]])
+         //   ->add('TagProfession', TagType::class, [
+          //     'label' => ' Vos metiers',
+           //  'attr' => ['class' => 'tag-input',]])
 
             ->add('file', FileType::class, [
                 'label' => ' Votre CV',

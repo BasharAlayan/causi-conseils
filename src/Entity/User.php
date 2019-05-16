@@ -70,12 +70,11 @@ class User implements UserInterface
      */
     private $country;
 
-
-/*
+    /*
     /**
      * @ORM\ManyToMany(targetEntity="Professions",inversedBy="users", cascade={"persist"})
      */
- //   private $TagProfession;
+     //private $TagProfession;
 
     /**
      * @ORM\ManyToMany(targetEntity="CenterInterests",inversedBy="users", cascade={"persist"})
@@ -208,7 +207,7 @@ class User implements UserInterface
     }
 
 //----------------------------------------------------------------------------------------------
-  /*  public function addTagProfessions(Professions $tag)
+   /* public function addTagProfessions(Professions $tag)
     {
         $this->TagProfession[] = $tag;
         return $this;
